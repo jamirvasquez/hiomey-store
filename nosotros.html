@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hiomey - Tienda de Ropa</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="contenedor-header">
+
+    <div class="header">
+      <!-- IZQUIERDA: LOGO -->
+      <a href="index.html" class="header__logo-link">
+        <span class="header__brand">HIOMEY</span>
+      </a>
+
+      <!-- CENTRO: BOTÓN MENÚ HAMBURGUESA (solo móvil) -->
+      <button class="header__menu-toggle" id="btnMenuToggle" aria-label="Abrir menú de navegación">
+        ☰
+      </button>
+
+      <!-- CENTRO: NAV (solo escritorio) -->
+      <nav class="header__nav-desktop" id="mainNavDesktop">
+        <a href="productos.html">Productos</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+
+      <!-- DERECHA: CARRITO -->
+      <button class="header__cart-btn" id="btnCartToggle">
+        🛒 <!--<span id="cartCount">0</span>-->
+      </button>
+
+      <!-- DESPLEGABLE MOBILE -->
+      <nav class="header__nav-mobile" id="mainNavMobile">
+        <a href="productos.html">Productos</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+    </div>
+
+
+  </header>
+
+
+
+
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="main">
+
+
+
+
+
+    <!-- CARRITO (SIDEBAR) -->
+    <aside class="cart" id="cart">
+      <div class="cart__header">
+        <h2>Carrito de compras</h2>
+        <button id="btnCartClose" class="cart__close">✕</button>
+      </div>
+
+      <div class="cart__items" id="cartItems">
+        <!-- Items del carrito se inyectan con JS -->
+      </div>
+
+      <div class="cart__footer">
+        <div class="cart__total">
+          Total: S/ <span id="cartTotal">0.00</span>
+        </div>
+        <button class="btn-primary cart__checkout">Finalizar compra</button>
+      </div>
+    </aside>
+
+    <!-- OVERLAY COMÚN (para carrito y menú móvil) -->
+    <div class="overlay" id="overlay">
+
+    </div>
+
+  </main>  
+
+  <footer class="contenedor-footer">
+    <div id="info-sections" class="info-sections">
+      <!-- NOSOTROS -->
+      <div class="info-box" id="nosotros">
+        <h2>Nosotros</h2>
+        <p>
+          NEXORYS nace como una marca unisex, comenzando con una línea enfocada en
+          ropa para mujer, pero con la visión de expandirse a todas las personas
+          que buscan estilo, versatilidad y comodidad.
+        </p>
+      </div>
+
+      <!-- CONTACTO -->
+      <div class="info-box" id="contacto">
+        <h2>Contacto</h2>
+        <p>Escríbenos para pedidos al por mayor, colaboraciones o consultas:</p>
+        <ul>
+          <li>WhatsApp: +51 999 999 999</li>
+          <li>Instagram: @nexorys</li>
+          <li>Correo: contacto@nexorys.com</li>
+        </ul>
+      </div>   
+    </div>
+
+  </footer>
+
+  <!-- JS -->
+  <script src="js/app.js"></script>
+</body>
+
+</html>
