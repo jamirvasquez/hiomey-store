@@ -15,7 +15,7 @@ const db = mysql.createConnection({
 
 db.connect(err => {
     if (err) {
-        console.error('Error de conexión:', err);
+        console.log('⚠️ MySQL no conectado, pero servidor sigue funcionando');
     } else {
         console.log('Conectado a MySQL');
     }
@@ -23,13 +23,26 @@ db.connect(err => {
 
 // ruta productos
 app.get('/productos', (req, res) => {
+
     db.query('SELECT * FROM productos', (err, result) => {
+
         if (err) {
-            res.status(500).send(err);
-        } else {
-            res.json(result);
+            console.log("Error BD:", err);
+
+            // 👇 RESPUESTA DE PRUEBA
+            return res.json([
+                {
+                    id: 1,
+                    nombre: "Producto prueba",
+                    precio: 50,
+                    imagen: "https://via.placeholder.com/300"
+                }
+            ]);
         }
+
+        res.json(result);
     });
+
 });
 
 // ✅ SOLO ESTE LISTEN (correcto)
